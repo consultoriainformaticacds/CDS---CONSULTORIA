@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDS | Tarifario Global del Ecosistema</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./src/css/variables.css">
+  <link rel="stylesheet" href="./src/css/base.css">
+  <link rel="stylesheet" href="./src/css/layout.css">
+  <link rel="stylesheet" href="./src/css/components.css">
+
+  <style>
+    body { background: var(--bg-primary); }
+    
+    .dashboard-container {
+      max-width: 1200px; margin: 120px auto 80px; padding: 0 5%;
+    }
+    
+    .tab-nav {
+      display: flex; gap: 10px; margin-bottom: 40px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 15px; overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent; color: var(--text-muted); border: 1px solid transparent; 
+      padding: 12px 24px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; border-radius: var(--radius-sm); cursor: pointer;
+      transition: var(--t-smooth); white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--text-main); background: rgba(255,255,255,0.05); }
+    .tab-btn.active { background: rgba(0,242,255,0.1); color: var(--accent-cyan); border-color: var(--border-cyan); box-shadow: var(--shadow-neon); }
+    .tab-btn[data-target="nexo"].active { background: rgba(212,175,55,0.1); color: #d4af37; border-color: rgba(212,175,55,0.3); box-shadow: 0 0 30px rgba(212,175,55,0.2); }
+    .tab-btn[data-target="combo"].active { background: rgba(139,92,246,0.1); color: var(--accent-purple); border-color: var(--border-purple); box-shadow: var(--shadow-purple); }
+
+    .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+    .tab-content.active { display: block; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .combo-card {
+      background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(0,242,255,0.05));
+      border: 1px solid var(--border-purple);
+      border-radius: var(--radius-md); padding: 50px;
+      display: flex; align-items: center; justify-content: space-between; gap: 40px;
+      box-shadow: var(--shadow-purple);
+    }
+    .combo-info h3 { font-size: 2.2rem; margin-bottom: 15px; font-family: 'Rajdhani', sans-serif; color: var(--text-main); }
+    .combo-info p { color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin-bottom: 20px; }
+    .combo-price { text-align: right; }
+    .combo-price .original { text-decoration: line-through; color: var(--text-faint); font-size: 1.2rem; }
+    .combo-price .final { font-size: 3rem; font-weight: 800; color: var(--accent-cyan); font-family: 'Rajdhani', sans-serif; line-height: 1; }
+    .combo-price .savings { color: var(--accent-green); font-size: 0.9rem; font-weight: 700; margin-top: 5px; }
+
+    @media (max-width: 800px) {
+      .combo-card { flex-direction: column; text-align: center; padding: 30px; }
+      .combo-price { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="logo">
+      <img src="./public/assets/img/logo-cds.png" alt="CDS" class="logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#servicios" class="nav-link">Servicios</a>
+      <a href="index.html#ecosistema" class="nav-link">Ecosistema</a>
+      <a href="https://wa.me/5491124632544" class="nav-cta">Asesor Comercial</a>
+    </div>
+  </nav>
+
+  <main class="dashboard-container">
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h1 class="hero-title" style="font-size: 3rem;">Tarifario <span>Global</span> 2026</h1>
+      <p class="hero-desc">Matriz ejecutiva de inversión para infraestructura digital y ciberseguridad corporativa.</p>
+    </div>
+
+    <div class="tab-nav">
+      <button class="tab-btn active" data-target="cds">🛡️ CDS Ciberseguridad</button>
+      <button class="tab-btn" data-target="nexo">🏆 Nexo Arquitectura Web</button>
+      <button class="tab-btn" data-target="combo">⚡ Combos All-in-One</button>
+    </div>
+
+    <!-- TAB: CDS -->
+    <div id="cds" class="tab-content active">
+      <div class="models-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <article class="service-card" style="border-color: rgba(255,255,255,0.05);">
+          <h3>Auditoría Express</h3>
+          <p>Pentesting básico y reporte ejecutivo. <br><b>Pago Único</b>.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); font-family: 'Rajdhani', sans-serif; margin-top: 20px;">USD 500</div>
+        </article>
+        <article class="service-card" style="border-color: rgba(255,255,255,0.05);">
+          <h3>Soporte IT Básico</h3>
+          <p>Mantenimiento preventivo mensual para PyMEs. Soporte 9 a 18hs.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); font-family: 'Rajdhani', sans-serif; margin-top: 20px;">USD 300<span style="font-size:1rem; color:var(--text-muted);">/m</span></div>
+        </article>
+        <article class="service-card" style="border-color: var(--border-cyan); box-shadow: var(--shadow-neon);">
+          <h3>Blindaje 24/7 (Pro)</h3>
+          <p>Monitoreo SOC continuo, respuesta a incidentes y protección perimetral.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); font-family: 'Rajdhani', sans-serif; margin-top: 20px;">USD 900<span style="font-size:1rem; color:var(--text-muted);">/m</span></div>
+        </article>
+        <article class="service-card" style="border-color: rgba(139,92,246,0.4);">
+          <h3>CISO as a Service</h3>
+          <p>Enterprise. ISO 27001, compliance y directorio corporativo de seguridad.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-purple); font-family: 'Rajdhani', sans-serif; margin-top: 20px;">USD 2.500<span style="font-size:1rem; color:var(--text-muted);">/m</span></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- TAB: NEXO -->
+    <div id="nexo" class="tab-content">
+      <div class="models-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+        <article class="service-card" style="border-color: rgba(255,255,255,0.05);">
+          <h3>Landing</h3>
+          <p>Single-page para leads y embudos.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #fff; font-family: 'Rajdhani', sans-serif; margin-top: auto; padding-top: 20px;">USD 350</div>
+        </article>
+        <article class="service-card" style="border-color: rgba(255,255,255,0.05);">
+          <h3>Standard</h3>
+          <p>Multi-page corporativo B2B.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #fff; font-family: 'Rajdhani', sans-serif; margin-top: auto; padding-top: 20px;">USD 650</div>
+        </article>
+        <article class="service-card" style="border-color: rgba(255,255,255,0.05);">
+          <h3>Tienda</h3>
+          <p>Catálogo E-Commerce estándar.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #fff; font-family: 'Rajdhani', sans-serif; margin-top: auto; padding-top: 20px;">USD 850</div>
+        </article>
+        <article class="service-card" style="border-color: rgba(212,175,55,0.4); box-shadow: 0 0 20px rgba(212,175,55,0.1);">
+          <h3>Premium Max</h3>
+          <p>Lujo visual, sistemas avanzados y reservas.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #d4af37; font-family: 'Rajdhani', sans-serif; margin-top: auto; padding-top: 20px;">USD 1.500</div>
+        </article>
+        <article class="service-card" style="border-color: rgba(139,92,246,0.4);">
+          <h3>Elite App</h3>
+          <p>Desarrollo custom, APIs y plataformas.</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-purple); font-family: 'Rajdhani', sans-serif; margin-top: auto; padding-top: 20px;">USD 2.500+</div>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top:30px;">
+        <a href="https://nexo-landing.pages.dev/comparativa/" target="_blank" style="color:#d4af37;">Ver Matriz Comparativa Detallada ↗</a>
+      </div>
+    </div>
+
+    <!-- TAB: COMBOS -->
+    <div id="combo" class="tab-content">
+      <div class="combo-card" style="margin-bottom: 20px;">
+        <div class="combo-info">
+          <h3>Ecosistema Seguro <span style="font-size:1rem; padding:4px 10px; background:var(--accent-purple); color:#fff; border-radius:4px; margin-left:10px;">POPULAR</span></h3>
+          <p><strong>Nexo Standard (Web) + Auditoría CDS + Soporte IT Básico (3 meses)</strong></p>
+          <p style="font-size:0.95rem;">Ideal para empresas que necesitan digitalizarse de cero con infraestructura protegida y soporte técnico asegurado por el primer trimestre.</p>
+        </div>
+        <div class="combo-price">
+          <div class="original">Valor regular: USD 2.050</div>
+          <div class="final">USD 1.700</div>
+          <div class="savings">Ahorras USD 350 (17% OFF)</div>
+          <a href="https://wa.me/5491124632544" target="_blank" class="btn-primary" style="margin-top:20px; border-color:var(--accent-purple); background:var(--accent-purple); box-shadow:var(--shadow-purple);">Contratar Combo</a>
+        </div>
+      </div>
+
+      <div class="combo-card" style="background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(0,0,0,0)); border-color: rgba(212,175,55,0.4); box-shadow: 0 0 30px rgba(212,175,55,0.1);">
+        <div class="combo-info">
+          <h3 style="color: #d4af37;">Enterprise "All-in-One"</h3>
+          <p><strong>Nexo Premium Max + Blindaje 24/7 (Suscripción de 12 meses)</strong></p>
+          <p style="font-size:0.95rem;">La solución definitiva. Activo digital de lujo High-Ticket sostenido sobre una red monitoreada 24/7 contra ataques DDoS e intrusiones.</p>
+        </div>
+        <div class="combo-price">
+          <div class="original">Valor regular: USD 12.300</div>
+          <div class="final" style="color: #d4af37;">USD 9.800</div>
+          <div class="savings" style="color: #d4af37;">Ahorras USD 2.500 (20% OFF)</div>
+          <a href="https://wa.me/5491124632544" target="_blank" class="btn-primary" style="margin-top:20px; background:#d4af37; color:#000; box-shadow: 0 0 20px rgba(212,175,55,0.3);">Agendar Call</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
