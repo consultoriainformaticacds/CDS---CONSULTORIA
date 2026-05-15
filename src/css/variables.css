@@ -1,18 +1,45 @@
 :root {
-  /* Paleta Élite Ciberseguridad */
-  --bg-primary: #020617;
-  --bg-secondary: #0f172a;
-  --accent-cyan: #00f2ff;
+  /* === COLORES === */
+  --bg-primary:    #020617;
+  --bg-secondary:  #0f172a;
+  --bg-card:       #0d1526;
+
+  --accent-cyan:   #00f2ff;
   --accent-purple: #8b5cf6;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  
-  /* Gradientes, bordes sutiles y Navbar */
-  --card-border: rgba(255, 255, 255, 0.04);
-  --card-bg: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
-  --nav-bg: rgba(2, 6, 23, 0.85);
-  
-  /* Transiciones fluidas y Sombras Premium */
-  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  --shadow-neon: 0 10px 30px -10px rgba(0, 242, 255, 0.15);
+  --accent-green:  #10b981;
+  --accent-amber:  #f59e0b;
+  --accent-red:    #ef4444;
+
+  --text-main:     #f8fafc;
+  --text-muted:    #94a3b8;
+  --text-faint:    #475569;
+
+  /* === BORDES === */
+  --border-faint:  rgba(255, 255, 255, 0.04);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-cyan:   rgba(0, 242, 255, 0.25);
+  --border-purple: rgba(139, 92, 246, 0.25);
+
+  /* === FONDOS CARD === */
+  --card-bg: linear-gradient(145deg, rgba(15,23,42,0.85), rgba(2,6,23,0.95));
+  --nav-bg:  rgba(2, 6, 23, 0.88);
+
+  /* === SOMBRAS === */
+  --shadow-neon:   0 0 30px -5px rgba(0, 242, 255, 0.2);
+  --shadow-purple: 0 0 30px -5px rgba(139, 92, 246, 0.2);
+  --shadow-card:   0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lg:     0 20px 60px rgba(0, 0, 0, 0.5);
+
+  /* === TRANSICIONES === */
+  --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --t-fast:   all 0.2s var(--ease-out);
+  --t-smooth: all 0.4s var(--ease-out);
+
+  /* === ESPACIADO === */
+  --section-pad: 110px 6%;
+  --nav-h:       80px;
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-pill: 100px;
 }

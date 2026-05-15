@@ -1,123 +1,263 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CDS | Ciberseguridad & Infraestructura IT — CABA, Argentina</title>
-
-  <meta name="description" content="Especialistas en ciberseguridad, auditoría IT, pentesting y soporte técnico 24/7 en CABA, Argentina. Blindamos tu operación con respuesta a incidentes y hardening avanzado.">
-  <meta name="author" content="CDS Consultoría Informática">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./src/css/variables.css">
-  <link rel="stylesheet" href="./src/css/base.css">
-  <link rel="stylesheet" href="./src/css/layout.css">
-  <link rel="stylesheet" href="./src/css/components.css">
-
-  <script type="module" src="./src/js/index.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS | Ciberseguridad &amp; IT — CABA, Argentina</title>
+<meta name="description" content="Especialistas en ciberseguridad, auditoría IT, pentesting y soporte 24/7 en CABA. Diagnóstico gratuito.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="CDS | Ciberseguridad &amp; Infraestructura IT — Argentina">
+<meta property="og:description" content="Especialistas en ciberseguridad, auditoría IT y soporte 24/7 para empresas en Argentina.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://consultoriainformaticacds.pages.dev/">
+<meta property="og:image" content="https://consultoriainformaticacds.pages.dev/assets/img/logo-cds.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./src/css/variables.css">
+<link rel="stylesheet" href="./src/css/base.css">
+<link rel="stylesheet" href="./src/css/layout.css">
+<link rel="stylesheet" href="./src/css/components.css">
+<script type="module" src="./src/js/index.js" defer></script>
 </head>
 <body>
 
-  <nav>
-    <a href="#" class="logo">CDS <span>CONSULTORÍA</span><small>Seguridad & Infraestructura</small></a>
-    <a href="#contacto" class="nav-cta">Solicitar Diagnóstico</a>
-  </nav>
+<nav id="navbar">
+  <a href="#inicio" class="logo" aria-label="CDS Inicio">
+    <img src="./public/assets/img/logo-cds.png" alt="CDS Consultoría Informática" class="logo-img">
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="#servicios" class="nav-link">Servicios</a>
+    <a href="#proceso" class="nav-link">Proceso</a>
+    <a href="#ecosistema" class="nav-link">Ecosistema</a>
+    <a href="#contacto" class="nav-cta">Diagnóstico Gratuito</a>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <header class="hero">
-    <div class="hero-badge">Operación Blindada 2026</div>
-    <h1>Protegemos tu <span>Ecosistema Digital</span></h1>
-    <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--text-muted);">
-      Auditoría IT, Ciberseguridad y Soporte 24/7 para empresas en CABA y toda Argentina.
-    </p>
-    <a href="#servicios" class="nav-cta" style="padding: 15px 30px; font-size: 1rem;">Conocer Servicios</a>
-  </header>
-
-  <section id="servicios">
-    <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: var(--text-main);">Nuestros <span style="color: var(--accent-cyan);">Servicios</span></h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-      
-      <article class="feat-card">
-        <h3>Auditoría de Ciberseguridad</h3>
-        <p>Evaluación exhaustiva de vulnerabilidades en tu red. Detectamos brechas antes de que sean explotadas por atacantes reales.</p>
-      </article>
-
-      <article class="feat-card">
-        <h3>Soporte IT 24/7</h3>
-        <p>Administración integral de redes y servidores Cloud. Mantenimiento preventivo para garantizar que tu empresa nunca interrumpa su flujo de trabajo.</p>
-      </article>
-
-      <article class="feat-card">
-        <h3>Pentesting y Hardening</h3>
-        <p>Simulaciones de ataque controladas y fortificación de servidores bajo estándares internacionales de seguridad de la información.</p>
-      </article>
-
-      <article class="feat-card">
-        <h3>Vigilancia y Cámaras IP</h3>
-        <p>Implementación de circuitos cerrados y monitoreo remoto seguro para proteger los activos físicos de tu organización.</p>
-      </article>
-
+<header class="hero" id="inicio">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-scanline" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-pulse"></span>Sistema Activo — Protección 24/7</div>
+    <h1 class="hero-title">Blindamos tu<br><span class="hero-accent">Infraestructura Digital</span></h1>
+    <p class="hero-sub">Auditoría IT, Ciberseguridad avanzada y Soporte 24/7 para empresas en CABA y toda Argentina. Sin brechas. Sin downtime.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary" id="hero-cta-primary">⚡ Solicitar Diagnóstico Gratuito</a>
+      <a href="https://wa.me/5491161336977?text=Hola!%20Quisiera%20información%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer" class="btn-outline btn-wa" id="hero-cta-wa">💬 Consultar por WhatsApp</a>
     </div>
-
-    <div class="trust-block" style="display: flex; flex-direction: column; align-items: flex-start;">
-      <h3>Ecosistema CDS & Nexo</h3>
-      <p style="color: var(--text-muted); margin-top: 10px; margin-bottom: 20px;">
-        Más que soporte, ofrecemos expansión digital. A través de nuestra división <strong>Nexo Web</strong>, creamos activos digitales de alta conversión integrados en infraestructuras 100% seguras.
-      </p>
-      <a href="https://nexoweb.pages.dev/" target="_blank" rel="noopener noreferrer" class="nav-cta" style="border-color: var(--accent-purple); color: var(--accent-purple);">
-        Explorar Nexo Web ↗
-      </a>
+    <div class="hero-trust">
+      <div class="trust-item">✔ Sin contratos de permanencia</div>
+      <div class="trust-item">✔ Respuesta en menos de 1 hora</div>
+      <div class="trust-item">✔ Diagnóstico inicial gratuito</div>
     </div>
-  </section>
+  </div>
+</header>
 
-  <section id="contacto" class="eco-box" style="margin: 50px 5%; text-align: center;">
-    <h2 style="margin-bottom: 20px;">Asegura tu Infraestructura Hoy</h2>
-    <form id="cdsForm" action="https://formspree.io/f/maqpkdog" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-      
-      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-        <input type="text" name="nombre" placeholder="Tu Nombre" required style="flex: 1; min-width: 200px; padding: 15px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-secondary); color: white; outline: none; font-family: inherit;">
-        <input type="text" name="empresa" placeholder="Empresa (Opcional)" style="flex: 1; min-width: 200px; padding: 15px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-secondary); color: white; outline: none; font-family: inherit;">
+<section id="servicios">
+  <div class="section-header reveal">
+    <span class="section-tag">Lo que hacemos</span>
+    <h2>Nuestros <span>Servicios</span></h2>
+    <p>Soluciones integrales para proteger y escalar tu infraestructura tecnológica.</p>
+  </div>
+  <div class="services-grid">
+    <article class="service-card reveal reveal-delay-1">
+      <div class="card-icon cyan">🛡️</div>
+      <h3>Auditoría de Ciberseguridad</h3>
+      <p>Evaluación exhaustiva de vulnerabilidades en tu red. Detectamos brechas antes de que sean explotadas por atacantes reales.</p>
+      <a href="#contacto" class="card-link">Solicitar auditoría →</a>
+    </article>
+    <article class="service-card reveal reveal-delay-2">
+      <div class="card-icon purple">🖥️</div>
+      <h3>Soporte IT 24/7</h3>
+      <p>Administración integral de redes y servidores Cloud. Mantenimiento preventivo para que tu empresa nunca detenga su operación.</p>
+      <a href="#contacto" class="card-link">Conocer más →</a>
+    </article>
+    <article class="service-card reveal reveal-delay-3">
+      <div class="card-icon amber">🎯</div>
+      <h3>Pentesting y Hardening</h3>
+      <p>Simulaciones de ataque controladas y fortificación de servidores bajo estándares internacionales de seguridad.</p>
+      <a href="#contacto" class="card-link">Solicitar pentesting →</a>
+    </article>
+    <article class="service-card reveal reveal-delay-4">
+      <div class="card-icon green">📷</div>
+      <h3>Vigilancia y Cámaras IP</h3>
+      <p>Implementación de circuitos cerrados y monitoreo remoto seguro para proteger los activos físicos de tu organización.</p>
+      <a href="#contacto" class="card-link">Ver soluciones →</a>
+    </article>
+  </div>
+</section>
+
+<section id="por-que-cds">
+  <div class="section-header reveal">
+    <span class="section-tag">Nuestra diferencia</span>
+    <h2>¿Por qué elegir <span>CDS</span>?</h2>
+    <p>Nos diferenciamos por velocidad, experiencia y compromiso real con tu operación.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-icon">⚡</div>
+      <h3>Respuesta Inmediata</h3>
+      <p>Tiempo de respuesta garantizado menor a 1 hora para incidentes críticos. Tu operación no puede esperar.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-icon">🔒</div>
+      <h3>Seguridad Probada</h3>
+      <p>Aplicamos estándares internacionales (ISO 27001, OWASP) para asegurar que tu infraestructura esté blindada.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-3">
+      <div class="why-icon">🤝</div>
+      <h3>Sin Letra Chica</h3>
+      <p>Sin contratos de permanencia forzados. Trabajamos por resultados. Si no estás conforme, no seguimos.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-4">
+      <div class="why-icon">📊</div>
+      <h3>Reportes Claros</h3>
+      <p>Informes ejecutivos comprensibles, sin tecnicismos innecesarios. Sabés exactamente en qué estado está tu sistema.</p>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="section-header reveal">
+    <span class="section-tag">Cómo trabajamos</span>
+    <h2>Nuestro <span>Proceso</span></h2>
+    <p>Un método claro y comprobado para blindar tu infraestructura desde el día uno.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-step reveal reveal-delay-1">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>Diagnóstico</h3>
+        <p>Análisis inicial gratuito de tu infraestructura actual. Sin compromiso.</p>
       </div>
-
-      <input type="email" name="email" placeholder="Correo Electrónico" required style="padding: 15px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-secondary); color: white; outline: none; font-family: inherit;">
-      
-      <select name="servicio" required style="padding: 15px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-secondary); color: white; outline: none; font-family: inherit; cursor: pointer;">
-        <option value="" disabled selected>Selecciona un servicio de interés...</option>
-        <option value="Auditoria">Auditoría de Ciberseguridad</option>
-        <option value="Soporte IT">Soporte IT 24/7</option>
-        <option value="Pentesting">Pentesting y Hardening</option>
-        <option value="Vigilancia">Vigilancia y Cámaras IP</option>
-        <option value="Nexo Web">Desarrollo Web (Nexo Web)</option>
-        <option value="Otro">Otra consulta</option>
-      </select>
-
-      <textarea name="mensaje" placeholder="¿Cómo podemos ayudarte?" required style="padding: 15px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-secondary); color: white; outline: none; font-family: inherit; min-height: 120px; resize: vertical;"></textarea>
-
-      <button type="submit" id="cds-btn" class="nav-cta" style="padding: 15px; font-size: 1rem; cursor: pointer; width: 100%; font-weight: bold; letter-spacing: 1px;">Hablar con un Especialista</button>
-      
-      <div id="form-status" style="margin-top: 10px; font-weight: 600; font-size: 0.9rem;"></div>
-    </form>
-  </section>
-
-  <footer style="border-top: 1px solid var(--card-border); padding: 40px 5%; text-align: center; margin-top: 80px; background: var(--bg-secondary);">
-    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;">
-      
-      <p style="color: var(--text-muted); font-size: 0.9rem;">
-        &copy; 2026 CDS Consultoría Informática. Todos los derechos reservados.
-      </p>
-      
-      <p style="color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.5px;">
-        Parte del <strong>Ecosistema CDS</strong> | Diseñado por 
-        <a href="https://nexoweb.pages.dev/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-purple); text-decoration: none; font-weight: 700; transition: var(--transition-smooth);">
-          Nexo Web ↗
-        </a>
-      </p>
-      
     </div>
-  </footer>
+    <div class="timeline-step reveal reveal-delay-2">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>Propuesta</h3>
+        <p>Plan de acción personalizado con alcance, tiempos y costos claros.</p>
+      </div>
+    </div>
+    <div class="timeline-step reveal reveal-delay-3">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Implementación</h3>
+        <p>Ejecución precisa por especialistas certificados con mínimo impacto operativo.</p>
+      </div>
+    </div>
+    <div class="timeline-step reveal reveal-delay-4">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h3>Monitoreo</h3>
+        <p>Supervisión continua 24/7 y reportes periódicos del estado de tu sistema.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ecosistema">
+  <div class="eco-block reveal">
+    <div class="eco-block-text">
+      <span class="section-tag">Ecosistema CDS</span>
+      <h2>Más que soporte: <span>expansión digital</span></h2>
+      <p>A través de <strong>Nexo Web</strong>, nuestra división de diseño, creamos activos digitales de alta conversión integrados en infraestructuras 100% seguras. Tecnología + Diseño = Crecimiento.</p>
+    </div>
+    <a href="https://nexoweb.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-purple" id="nexo-link">Explorar Nexo Web ↗</a>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="contact-wrapper reveal">
+    <div class="contact-info">
+      <span class="section-tag">Hablemos</span>
+      <h2>Asegura tu<br><span>Infraestructura Hoy</span></h2>
+      <p>Completá el formulario y un especialista te contacta en menos de 24 horas. O si preferís, escribinos directo por WhatsApp.</p>
+      <a href="https://wa.me/5491161336977?text=Hola!%20Quisiera%20un%20diagnóstico%20gratuito." target="_blank" rel="noopener noreferrer" class="wa-link" id="wa-contact-link">💬 WhatsApp directo</a>
+    </div>
+    <form id="cdsForm" action="https://formspree.io/f/maqpkdog" method="POST" class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Opcional">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="servicio">Servicio de interés</label>
+        <select id="servicio" name="servicio" required>
+          <option value="" disabled selected>Seleccioná un servicio...</option>
+          <option value="Auditoria">Auditoría de Ciberseguridad</option>
+          <option value="Soporte IT">Soporte IT 24/7</option>
+          <option value="Pentesting">Pentesting y Hardening</option>
+          <option value="Vigilancia">Vigilancia y Cámaras IP</option>
+          <option value="Nexo Web">Desarrollo Web (Nexo Web)</option>
+          <option value="Otro">Otra consulta</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+      </div>
+      <button type="submit" id="cds-btn" class="btn-primary" style="justify-content:center;width:100%;">Hablar con un Especialista</button>
+      <div id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="./public/assets/img/logo-cds.png" alt="CDS" class="footer-logo-img">
+      <p>Especialistas en Ciberseguridad e Infraestructura IT para empresas en CABA y toda Argentina.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#servicios">Auditoría de Seguridad</a></li>
+        <li><a href="#servicios">Soporte IT 24/7</a></li>
+        <li><a href="#servicios">Pentesting</a></li>
+        <li><a href="#servicios">Vigilancia IP</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ecosistema</h4>
+      <ul>
+        <li><a href="https://nexoweb.pages.dev/" target="_blank" rel="noopener">Nexo Web</a></li>
+        <li><a href="https://nexo-landing.pages.dev/" target="_blank" rel="noopener">Nexo Landing</a></li>
+        <li><a href="#proceso">Nuestro Proceso</a></li>
+        <li><a href="#por-que-cds">Por qué CDS</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#contacto">Diagnóstico Gratuito</a></li>
+        <li><a href="https://wa.me/5491161336977" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:contacto@consultoriainformaticacds.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 CDS Consultoría Informática. Todos los derechos reservados.</p>
+    <p>Diseñado por <a href="https://nexoweb.pages.dev/" target="_blank" rel="noopener">Nexo Web ↗</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5491161336977?text=Hola!%20Quisiera%20información%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer" class="wa-fab" id="wa-fab" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 </body>
 </html>

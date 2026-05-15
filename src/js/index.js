@@ -1,77 +1,94 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // ... (Mantén tus animaciones Reveal aquí arriba si las tienes) ...
-
-    const form = document.getElementById('cdsForm');
-    const status = document.getElementById('form-status');
-    const btn = document.getElementById('cds-btn');
-
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Evita que la página se recargue
-            
-            const originalText = btn.innerText;
-            const data = new FormData(form);
-            
-            // UX Visual: Botón procesando
-            btn.innerText = "Procesando...";
-            btn.disabled = true;
-            btn.style.opacity = '0.7';
-            if (status) status.innerHTML = ""; // Limpia mensajes anteriores
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    // Magia Visual (Mi código)
-                    btn.innerText = "¡Enviado!";
-                    btn.style.background = "var(--accent-cyan)";
-                    btn.style.color = "var(--bg-primary)";
-                    btn.style.opacity = '1';
-                    
-                    // Lógica de texto (Tu código)
-                    if (status) {
-                        status.innerHTML = "¡Consulta enviada con éxito! Un especialista te contactará pronto.";
-                        status.style.color = "var(--accent-cyan)";
-                    }
-                    form.reset(); // Limpia los campos
-
-                    // Volver a la normalidad en 5 seg
-                    setTimeout(() => {
-                        btn.innerText = originalText;
-                        btn.style.background = "transparent";
-                        btn.style.color = "white";
-                        btn.disabled = false;
-                        if (status) status.innerHTML = "";
-                    }, 5000);
-
-                } else {
-                    // Lógica de Errores Formspree (Tu código)
-                    const result = await response.json();
-                    if (status) {
-                        status.innerHTML = "Hubo un error: " + (result.errors ? result.errors[0].message : "Intenta nuevamente");
-                        status.style.color = "#ff4444"; // Rojo error
-                    }
-                    throw new Error('Error de Formspree');
-                }
-            } catch (error) {
-                // Plan B: Falla de red (Tu código)
-                if (status && !status.innerHTML) {
-                    status.innerHTML = "Error de conexión. Por favor, intenta por WhatsApp.";
-                    status.style.color = "#ff4444";
-                }
-                btn.style.borderColor = "#ff4444";
-                
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.borderColor = "var(--card-border)";
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-                }, 5000);
-            }
-        });
+// ===========================
+// SCROLL REVEAL
+// ===========================
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ===========================
+// NAVBAR — scroll effect & hamburger
+// ===========================
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar?.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+const hamburger = document.getElementById('nav-hamburger');
+const navLinks  = document.getElementById('nav-links');
+
+hamburger?.addEventListener('click', () => {
+  navLinks?.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', navLinks?.classList.contains('open'));
+});
+
+// Close menu on nav link click
+navLinks?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// ===========================
+// CONTACT FORM — Formspree AJAX
+// ===========================
+const form   = document.getElementById('cdsForm');
+const status = document.getElementById('form-status');
+const btn    = document.getElementById('cds-btn');
+
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const originalText = btn.textContent;
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+  if (status) status.textContent = '';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      btn.textContent = '✓ ¡Enviado!';
+      btn.style.opacity = '1';
+      btn.style.background = 'var(--accent-cyan)';
+      btn.style.color = 'var(--bg-primary)';
+      if (status) {
+        status.textContent = '¡Consulta enviada! Te contactaremos pronto.';
+        status.style.color = 'var(--accent-cyan)';
+      }
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.cssText = '';
+        btn.disabled = false;
+        if (status) status.textContent = '';
+      }, 5000);
+
+    } else {
+      const result = await response.json();
+      const msg = result?.errors?.[0]?.message ?? 'Error desconocido';
+      if (status) { status.textContent = 'Error: ' + msg; status.style.color = 'var(--accent-red)'; }
+      btn.textContent = originalText;
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+
+  } catch {
+    if (status) {
+      status.textContent = 'Sin conexión. Escribinos por WhatsApp.';
+      status.style.color = 'var(--accent-red)';
+    }
+    btn.textContent = originalText;
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
 });
