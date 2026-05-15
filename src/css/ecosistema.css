@@ -1,8 +1,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: #0f1117;
+  font-family: 'Rajdhani', 'Segoe UI', system-ui, sans-serif;
+  background: #030303;
   color: #e2e8f0;
   min-height: 100vh;
   display: flex;
@@ -22,13 +22,14 @@ h1 {
 }
 
 .card {
-  background: #1a1f2e;
-  border: 1px solid #2d3448;
+  background: linear-gradient(145deg, rgba(10,10,10,0.85), rgba(3,3,3,0.95));
+  border: 1px solid rgba(0, 242, 255, 0.15);
   border-radius: 16px;
   padding: 2rem;
   max-width: 760px;
   width: 100%;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+  box-shadow: 0 0 40px rgba(0, 242, 255, 0.05);
+  backdrop-filter: blur(10px);
 }
 
 svg text { font-family: 'Segoe UI', system-ui, sans-serif; }
@@ -37,25 +38,25 @@ svg text { font-family: 'Segoe UI', system-ui, sans-serif; }
 .ts { font-size: 12px; font-weight: 400; fill: #94a3b8; }
 
 /* Color ramps */
-.c-purple rect { fill: #2d2060; stroke: #534AB7; }
-.c-purple text.th { fill: #CECBF6; }
-.c-purple text.ts { fill: #AFA9EC; }
+.c-purple rect { fill: rgba(139, 92, 246, 0.1); stroke: #8b5cf6; }
+.c-purple text.th { fill: #c4b5fd; }
+.c-purple text.ts { fill: #8b5cf6; }
 
-.c-coral rect { fill: #3d1a10; stroke: #993C1D; }
-.c-coral text.th { fill: #F5C4B3; }
-.c-coral text.ts { fill: #F0997B; }
+.c-coral rect { fill: rgba(245, 158, 11, 0.1); stroke: #f59e0b; }
+.c-coral text.th { fill: #fde68a; }
+.c-coral text.ts { fill: #f59e0b; }
 
-.c-teal rect { fill: #083528; stroke: #0F6E56; }
-.c-teal text.th { fill: #9FE1CB; }
-.c-teal text.ts { fill: #5DCAA5; }
+.c-teal rect { fill: rgba(0, 242, 255, 0.1); stroke: #00f2ff; }
+.c-teal text.th { fill: #a5f3fc; }
+.c-teal text.ts { fill: #00f2ff; }
 
 .c-gray rect { fill: #1e2230; stroke: #3d4258; }
 .c-gray text.th { fill: #c8cad0; }
 .c-gray text.ts { fill: #888780; }
 
 .arr {
-  stroke: #3d4258;
-  stroke-width: 1;
+  stroke: rgba(0, 242, 255, 0.3);
+  stroke-width: 1.5;
   fill: none;
 }
 
